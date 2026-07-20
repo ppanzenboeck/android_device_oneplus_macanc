@@ -1,2 +1,7 @@
 # Radio
 ro.vendor.oplus.regionmark=CN
+
+# Dolby Vision
+ro.vendor.oplus.dolby_vision_dpu=1
+ro.vendor.oplus.dolby_vision_dpu.dvs=1
+ro.vendor.oplus.dolby_vision.multi_cfg=1

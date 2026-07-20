@@ -41,6 +41,32 @@ PRODUCT_PACKAGES += \
     OPlusSystemUIResTarget \
     OPlusWifiResTarget
 
+# PowerShare
+PRODUCT_PACKAGES += \
+    vendor.lineage.powershare-service.oplus
+
+# Properties
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.build.version.ota=CPH2745_11.A.42_0420_202606022356 \
+    ro.oplus.product.series=flagship_series
+
+# VINTF
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    device/oneplus/infiniti/vintf/device_framework_matrix.xml
+
+# Recovery
+$(call soong_config_set_bool,recovery,target_recovery_uses_qti_drm,true)
+
+# Regional properties
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24831/build.default.prop:$(TARGET_COPY_OUT_ODM)/etc/24831/build.default.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.EU.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.EU.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.IN.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.IN.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.NA.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.NA.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.ROW.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.ROW.prop \
+    $(LOCAL_PATH)/recovery/root/vendor/odm/etc/24863/build.default.prop:$(TARGET_COPY_OUT_ODM)/etc/24863/build.default.prop
+>>>>>>> bab648a (infiniti: add Dolby Vision DVS service contract)
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
