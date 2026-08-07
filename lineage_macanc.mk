@@ -16,6 +16,13 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 PRODUCT_NAME := lineage_macanc
 PRODUCT_DEVICE := macanc
+
+BYPASS_CHARGE_SUPPORTED := true
+
+# Keep fixed-source video below 60 fps from selecting high refresh-rate modes.
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    debug.sf.frame_rate_multiple_threshold=120
+
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := PLR110
